@@ -1,0 +1,215 @@
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+.dashboard { max-width: 1180px; margin: 0 auto; padding: 0 42px 72px; color: #17231f; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 26px 0; border-bottom: 1px solid #bdc9bb; font-family: Arial, sans-serif; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.topbar > div { display: flex; align-items: center; gap: 11px; font-weight: 700; }
+.mark { display: grid; place-items: center; width: 34px; height: 34px; background: #d86f4b; color: #fff8f1; font-size: 12px; letter-spacing: 0; }
+.status { color: #52705d; font-size: 11px; }
+.status i { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #3e9564; }
+.intro { padding: 78px 0 52px; max-width: 690px; }
+.eyebrow { margin: 0 0 12px; color: #c65d3e; font: 700 11px/1.2 Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+.intro h1 { margin: 0; font: 400 clamp(42px, 7vw, 84px)/.98 Georgia, serif; letter-spacing: -.04em; color: #17231f; }
+.intro .subtitle { margin: 22px 0 0; color: #637469; font: 16px/1.6 Arial, sans-serif; }
+.content-grid { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; gap: 72px; align-items: start; }
+.student-form, .student-list { border-top: 2px solid #17231f; padding-top: 20px; }
+.student-form h2, .student-list h2 { margin: 0 0 30px; color: #17231f; font: 400 28px/1.1 Georgia, serif; }
+.student-form label { display: block; margin: 0 0 18px; color: #587064; font: 11px/1.2 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.student-form input { display: block; box-sizing: border-box; width: 100%; margin-top: 8px; padding: 13px 0; border: 0; border-bottom: 1px solid #aebcaf; outline: 0; color: #17231f; background: transparent; font: 17px Georgia, serif; }
+.student-form input:focus { border-color: #c65d3e; }
+.student-form button { margin-top: 14px; padding: 14px 20px; border: 0; color: #fff8f1; background: #c65d3e; cursor: pointer; font: 700 12px Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.student-form button:hover { background: #a94730; }
+.student-form button:disabled { opacity: .6; cursor: wait; }
+.list-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 24px; }
+.list-heading h2 { margin-bottom: 0; }
+.count { color: #52705d; font: 12px Arial, sans-serif; }
+.table-wrap { overflow-x: auto; }
+.student-list table { width: 100%; border-collapse: collapse; font: 15px/1.4 Arial, sans-serif; }
+.student-list th { padding: 0 16px 12px 0; color: #7a8d80; text-align: left; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.student-list td { padding: 17px 16px 17px 0; border-top: 1px solid #c6d0c4; }
+.student-list td strong { color: #c65d3e; font-weight: 700; }
+.empty, .error { padding: 28px 0; color: #718276; font: 15px Arial, sans-serif; }
+.error { color: #a94730; }
+@media (max-width: 720px) { .dashboard { padding: 0 22px 48px; } .topbar { align-items: flex-start; gap: 12px; } .status { max-width: 120px; text-align: right; line-height: 1.4; } .intro { padding: 54px 0 38px; } .content-grid { grid-template-columns: 1fr; gap: 52px; } }
