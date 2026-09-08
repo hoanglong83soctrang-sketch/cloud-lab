@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: ./server
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb+srv://cloud_lab_user:mewbs2Joe52Y6Mep@cluster0.fewxp0v.mongodb.net/?retryWrites=true&w=majority
+  frontend:
+    build: ./client
+    ports:
+      - "3000:4173"

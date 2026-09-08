@@ -12,7 +12,7 @@ function App() {
   const loadStudents = async () => {
     try {
       setError('')
-      const response = await fetch('/api/students')
+      const response = await fetch('http://localhost:5000/api/students')
       if (!response.ok) throw new Error('Khong the tai danh sach sinh vien')
       setStudents(await response.json())
     } catch (loadError) {
@@ -35,7 +35,7 @@ function App() {
     setSubmitting(true)
     setError('')
     try {
-      const response = await fetch(editingId ? `/api/students/${editingId}` : '/api/students', {
+      const response = await fetch(editingId ? `http://localhost:5000/api/students/${editingId}` : 'http://localhost:5000/api/students', {
         method: editingId ? 'PUT' : 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -64,7 +64,7 @@ function App() {
     if (!window.confirm(`Xoa sinh vien ${student.studentId}?`)) return
     try {
       setError('')
-      const response = await fetch(`/api/students/${student._id}`, { method: 'DELETE' })
+      const response = await fetch(`http://localhost:5000/api/students/${student._id}`, { method: 'DELETE' })
       if (!response.ok) throw new Error('Khong the xoa sinh vien')
       if (editingId === student._id) {
         setEditingId(null)
