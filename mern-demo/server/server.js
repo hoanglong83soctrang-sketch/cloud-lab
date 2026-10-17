@@ -8,7 +8,12 @@ const Student = require('./models/Student');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+   const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5173', 'http://localhost:3000'];
+
+   app.use(cors({
+     origin: (origin, cb) => cb(null, !origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production'),
+     credentials: true
+   }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
